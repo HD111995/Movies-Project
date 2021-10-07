@@ -4,9 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
+    <title>Home</title>
 </head>
 <body>
-    <h1>TEst</h1>
+    <%console.log(movies)%>
+    <header>
+        <nav>
+            <h2>MOVIEMAGIC</h2>
+            <form action="">
+                <input type="text" name="" id="" placeholder="">
+                <input type="submit" value="Search">
+            </form>
+        </nav>
+        <div class="cat">
+            <ul>
+                <li><a href="">Action</a></li>
+                <li><a href="">Crime</a></li>
+                <li><a href="">Comedy</a></li>
+                <li><a href="">Drama</a></li>
+                <li><a href="">Horror</a></li>
+                <li><a href="">Music</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <figure>
+        <img src="" alt="">
+        <figcaption></figcaption>
+        </figure>
+    </main>
+    <footer>
+    <div>
+        <% if(Number(pages)>0 && Number(pages)<5){ %>
+        <% for(let i = 1; i < 10 ; i++){ %>
+                <button><a href=<%= `/pages/${i}` %>><%= i %></a></button>
+        <% }} else if(Number(pages) <= 996 && Number(pages) >= 5){ %>
+            <% for(let i = Number(pages)-4; i <= Number(pages)+4 ; i++){ %>
+                <a href=<%= `/pages/${i}` %>><%= i%></a>
+                <% }} %>       
+    </div>
+</footer>
 </body>
 </html>
