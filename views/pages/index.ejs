@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/assets/css/Style.css">
 </head>
 <body>
-    <%console.log(movies)%>
+   
     <header>
         <nav>
-            <h2>MOVIEMAGIC</h2>
+            <h2>MISHOMAGIC</h2>
             <form action="">
-                <input type="text" name="" id="" placeholder="">
+                <input type="text" name="" id="" placeholder="&#128269;">
                 <input type="submit" value="Search">
             </form>
         </nav>
@@ -28,10 +29,16 @@
         </div>
     </header>
     <main>
+        <% movies.forEach(elt => { %>
+
+       <a href=<%= `/pages/${pages}/${elt.id}` %>>
         <figure>
-        <img src="" alt="">
-        <figcaption></figcaption>
+        <img src=<%= `https://image.tmdb.org/t/p/w1280${elt.poster_path}` %> alt="">
+        <figcaption><%= elt.original_title %></figcaption>
+        <h5><%= elt.release_date%></h5>
         </figure>
+    </a>
+        <% }) %>
     </main>
     <footer>
     <div>

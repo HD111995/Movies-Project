@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="/assets/css/details.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h2>MOVIEMAGIC</h2>
+            <form action="">
+                <input type="text" name="" id="" placeholder="">
+                <input type="submit" value="Search">
+            </form>
+        </nav>
+        </header>
+        <main>
+            <figure>
+                <img src=<%= `https://image.tmdb.org/t/p/w1280${details.backdrop_path}` %> alt="">
+                <div class="rating">
+                    <h2>&#11088;</h2>
+                    <h3><%= `${details.vote_average}/10` %></h3>
+                    <h4><%=details.popularity%></h4>
+                </div>
+            </figure>
+            <article>
+                <h1><%=details.original_title%></h1>
+                <h3><%=details.release_date%> Released</h3>
+                <div class="type">
+                    <% details.genres.forEach(elt=>{ %>
+                        <span ><%=elt.name%>  </span>
+                    <% }) %>
+                </div>
+                <div class="desc">
+                    <h2>Plot Summary</h2>
+                    <p><%= details.overview%></p>
+                </div>
+            </article>
+        </main>
+</body>
+</html>

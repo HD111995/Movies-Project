@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Catamaran&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+::placeholder {
+  color: #fff;
+}
+body {
+  background-color: rgb(39, 37, 37);
+  font-family: "Catamaran", sans-serif;
+  color: #fff;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  background-color: rgb(68, 67, 67);
+}
+nav h2 {
+  font-family: "Anton", sans-serif;
+  font-size: 30px;
+  -webkit-text-stroke-color: #000;
+  -webkit-text-stroke-width: 1px;
+}
+form input:nth-child(1) {
+  margin: 0 2vw 0 8vw;
+  width: 25vw;
+  height: 3vh;
+  border-radius: 20px;
+  background-color: rgb(39, 37, 37);
+  color: #fff;
+  font-size: 18px;
+}
+form input:nth-child(2) {
+  background-color: #fff;
+  width: 10vw;
+  height: 3vh;
+  border-radius: 20px;
+  color: #000;
+  font-size: 18px;
+}
+header div ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 12vw;
+}
+header div ul li a {
+  padding: 5px 15px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+header div ul li a:hover {
+  background-color: #fff;
+  color: #000;
+}
+main {
+  padding: 60px 8vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3vw;
+}
+main > a {
+  border-radius: 20px;
+  padding: 0 2px;
+}
+main > a:hover {
+  box-shadow: 0px 0px 2px 4px rgb(228, 204, 204);
+  transform: scale(1.1);
+}
+main img {
+  width: 19vw;
+  border-radius: 20px;
+}
+footer {
+  padding-bottom: 4vh;
+}
+footer div {
+  width: 20vw;
+  margin: 2vh auto;
+  display: flex;
+  justify-content: space-between;
+}
+footer div a {
+  background-color: rgb(197, 195, 195);
+  color: #000;
+  width: 1.5vw;
+  height: 1.5vw;
+  text-align: center;
+  border-radius: 4px;
+  border: 2px solid #fff;
+  font-weight: 900;
+}
+footer div a:hover {
+  background-color: #000;
+  color: #fff;
+}

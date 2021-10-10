@@ -29,5 +29,15 @@ app.get('/pages/:page',(req,res)=>{
     .catch(function(error){
         console.log(error)
     })
+
     
+})
+app.get('/pages/:page/:id',(req,res)=>{
+    axios.get(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${process.env.API_KEY}&language=en-US`)
+    .then(function(response){
+        res.render('pages/filmDetails.ejs',{details:response.data})
+    })
+    .catch(function(error){
+        console.log(error)
+    })
 })
