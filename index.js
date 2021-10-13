@@ -9,7 +9,7 @@ const axios = require('axios')
 port = process.env.PORT || 3000
 var cors = require('cors')
 app.use(cors())
-
+let pageCounter = 0;
 
 app.listen(port,()=>{
     console.log('i am your listening Server Hi')
@@ -29,7 +29,6 @@ app.get('/pages/:page',(req,res)=>{
     .catch(function(error){
         console.log(error)
     })
-
     
 })
 app.get('/pages/:page/:id',(req,res)=>{
@@ -40,4 +39,29 @@ app.get('/pages/:page/:id',(req,res)=>{
     .catch(function(error){
         console.log(error)
     })
+})
+app.get('/search-for',(req,res)=>{
+    pageCounter += 1;
+    console.log(req.query.keyword)
+    if (pageCounter < 500 ){
+        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&page=${pageCounter}&query=${req.query.keyword}`)
+        .then(function(response){
+            res.render('pages/founded.ejs',{found:response.data.results,keyword:req.query.keyword})
+           
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+    }else{
+        pageCounter = 1
+        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&page=${pageCounter}&query=${req.query.keyword}`)
+        .then(function(response){
+            res.render('pages/founded.ejs',{found:response.data.results,keyword:req.query.keyword})
+           
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+    }
+   
 })

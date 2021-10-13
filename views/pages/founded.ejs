@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Founded</title>
+    <link rel="stylesheet" href="/assets/css/Style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h2>MISHOMAGIC</h2>
+            <form action="/search-for" method="GET">
+                <input type="text" name="keyword" id="" placeholder="&#128269;">
+                <input type="submit" value="Search">
+            </form>
+        </nav>
+        </header>
+    <main>
+        <% found.forEach(elt => { %>
+
+       <a href=<%= `/pages/detail/${elt.id}` %>>
+        <figure>
+        <img src=<%= `https://image.tmdb.org/t/p/w1280${elt.poster_path}` %> alt="">
+        <figcaption><%= elt.original_title %></figcaption>
+        <h5><%= elt.release_date%></h5>
+        </figure>
+    </a>
+        <% }) %>
+        
+    </main>
+    <form action="/search-for" method="GET" class="more">
+        <input class="hidden" type="text" name="keyword" id=""  value=<%=keyword%>>
+        <input type="submit" value="more">
+    </form>
+</body>
+</html>
