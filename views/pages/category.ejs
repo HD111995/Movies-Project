@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Founded</title>
+    <title>Category</title>
     <link rel="stylesheet" href="/assets/css/Style.css">
 </head>
 <body>
+   
     <header>
         <nav>
             <a href="/"><h2>MISHOMAGIC</h2></a>
@@ -16,26 +17,30 @@
                 <input type="submit" value="Search">
             </form>
         </nav>
-        </header>
+    </header>
     <main>
-        <% found.forEach(elt => { %>
+        <% moviesCat.forEach(elt => { %>
 
-       <a href=<%= `/pages/${page}/${elt.id}` %> >
+       <a href=<%= `/pages/detail/${elt.id}` %>>
         <figure>
-        <img src=<%= `https://image.tmdb.org/t/p/w1280${elt.poster_path}` %> alt="Sorry foto is not avilable">
+        <img src=<%= `https://image.tmdb.org/t/p/w1280${elt.poster_path}` %> alt="">
         <figcaption><%= elt.original_title %></figcaption>
         <h5><%= elt.release_date%></h5>
         </figure>
     </a>
         <% }) %>
-        
     </main>
-    <form action="/search-for" method="GET" class="more">
-        <input class="hidden" type="text" name="keyword" id=""  value=<%=keyword%>>
-        <input type="submit" value="more">
-    </form>
     <footer>
-        <p class="copy">&#169; CopyRight 2021 Hisham Diab</p>
-    </footer>
+    <div>
+        <% if(Number(page)>0 && Number(page)<5){ %>
+        <% for(let i = 1; i < 10 ; i++){ %>
+                <button><a href=<%= `/category/${cat}/${id}/${i}` %>><%= i %></a></button>
+        <% }} else if(Number(page) <= 496 && Number(page) >= 5){ %>
+            <% for(let i = Number(page)-4; i <= Number(page)+4 ; i++){ %>
+                <a href=<%= `/category/${cat}/${id}/${i}` %>><%= i%></a>
+                <% }} %>       
+    </div>
+    <p class="copy">&#169; CopyRight 2021 Hisham Diab</p>
+</footer>
 </body>
 </html>

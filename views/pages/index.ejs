@@ -11,7 +11,7 @@
    
     <header>
         <nav>
-            <h2>MISHOMAGIC</h2>
+            <a href="/"><h2>MISHOMAGIC</h2></a>
             <form action="/search-for" method="GET">
                 <input type="text" name="keyword" id="" placeholder="&#128269;">
                 <input type="submit" value="Search">
@@ -19,12 +19,12 @@
         </nav>
         <div class="cat">
             <ul>
-                <li><a href="">Action</a></li>
-                <li><a href="">Crime</a></li>
-                <li><a href="">Comedy</a></li>
-                <li><a href="">Drama</a></li>
-                <li><a href="">Horror</a></li>
-                <li><a href="">Music</a></li>
+                <li><a href="/category/action/28/1">Action</a></li>
+                <li><a href="/category/crime/80/1">Crime</a></li>
+                <li><a href="/category/comedy/35/1">Comedy</a></li>
+                <li><a href="/category/drama/18/1">Drama</a></li>
+                <li><a href="/category/horror/27/1">Horror</a></li>
+                <li><a href="/category/music/10402/1">Music</a></li>
             </ul>
         </div>
     </header>
@@ -50,6 +50,7 @@
                 <a href=<%= `/pages/${i}` %>><%= i%></a>
                 <% }} %>       
     </div>
+    <p class="copy">&#169; CopyRight 2021 Hisham Diab</p>
 </footer>
 </body>
 </html>

@@ -107,3 +107,9 @@ footer div a:hover {
 .hidden {
   display: none;
 }
+.copy {
+  word-spacing: 5px;
+  padding: 2vh 0 0 0;
+  text-align: center;
+  font-weight: 900;
+}
