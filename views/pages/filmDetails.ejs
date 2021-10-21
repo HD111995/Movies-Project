@@ -27,6 +27,34 @@
                 </div>
             </figure>
             <article>
+                <% if(result == null){ %>
+                <form action="/addto" method="post">
+                    <input type="hidden" name="_id" value=<%=details.id%>>
+                    <input type="hidden" name="img_src" value=<%= `https://image.tmdb.org/t/p/w1280${details.backdrop_path}` %>>
+                    <input type="hidden" name="title" value="<%=details.original_title%>">
+                    <% details.genres.forEach(elt => {%>   
+                    <input type="hidden" name="type" value=<%= elt.name %>>
+                    <%})%>
+                    <input type="hidden" name="relase_date" value=<%=details.release_date%>>
+                    <input type="hidden" name="over_view" value="<%= details.overview%>">      
+                    <input type="hidden" name="rating" value=<%= details.vote_average %>>
+                    <input type="hidden" name="popularity" value=<%=details.popularity%>>
+                <div id="addme">
+                <input type="submit" value="&plus;">
+                <h2> Add to Favorite</h2>
+            </form>
+            <%} else{ %>
+               
+                <form action=<%=`/remove/${result._id}`%> method="post">
+                    <div id="addme">
+                    <input type="submit" value="&#45;">
+                    <h2>Remove from Favorite</h2>
+                </div>
+                </form>
+            
+             <%}%>   
+            </div>
+            <hr/>
                 <h1><%=details.original_title%></h1>
                 <h3><%=details.release_date%> Released</h3>
                 <div class="type">

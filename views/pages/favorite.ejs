@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shows</title>
+    <link rel="stylesheet" href="/assets/css/Style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/"><h2>MISHOMAGIC</h2></a>
+            <h2>My Shows</h2>
+        </nav>
+    </header>
+    <main>
+        <% result.forEach(elt => { %>
+
+       <a href=<%= `/pages/1/${elt._id}` %>>
+        <figure>
+        <img src=<%= `https://image.tmdb.org/t/p/w1280${elt.img_src}` %> alt="">
+        <figcaption><%= elt.title %></figcaption>
+        <h5><%= elt.relase_date%></h5>
+        </figure>
+    </a>
+        <% }) %>
+    </main>
+</body>
+</html>

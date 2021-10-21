@@ -110,3 +110,28 @@ article h3 {
   text-align: center;
   font-weight: 900;
 }
+#addme {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#addme input {
+  width: 3vw;
+  height: 3vw;
+  color: #000;
+  font-size: 40px;
+  background-color: rgb(236, 236, 236);
+  margin: 0 15px 0 0;
+  border-radius: 50%;
+  line-height: 25px;
+}
+#addme input:hover {
+  background-color: #333;
+  color: rgb(212, 211, 211);
+}
+#addme h2 {
+  font-size: 30px;
+}
+hr {
+  margin: 10px 0;
+}

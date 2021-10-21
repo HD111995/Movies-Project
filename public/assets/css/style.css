@@ -17,9 +17,9 @@ body {
 }
 nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 1vw 8vw;
   background-color: rgb(68, 67, 67);
 }
 nav h2 {

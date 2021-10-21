@@ -16,6 +16,7 @@
                 <input type="text" name="keyword" id="" placeholder="&#128269;">
                 <input type="submit" value="Search">
             </form>
+            <a href="/favorite"><h2>My Shows</h2></a>
         </nav>
         <div class="cat">
             <ul>
@@ -30,7 +31,7 @@
     </header>
     <main>
         <% movies.forEach(elt => { %>
-
+            
        <a href=<%= `/pages/${pages}/${elt.id}` %>>
         <figure>
         <img src=<%= `https://image.tmdb.org/t/p/w1280${elt.poster_path}` %> alt="">
